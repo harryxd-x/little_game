@@ -1,1 +1,1 @@
-# little_math_game
+# little_game
