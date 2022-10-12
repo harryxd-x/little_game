@@ -2,7 +2,6 @@
 import os
 import random
 import json
-import asyncio
 with open('setting.json','r',encoding='utf8') as jfile:
   jdata = json.load(jfile)
 try:
@@ -13,9 +12,13 @@ except:
 
 # setting
 point = 0  # player point
-times = 10  # countdown time
+times = 30  # countdown time
 wrong = 10
 bounes = 0  # 0 = false 1 = true
+high = 10
+ehigh = 5
+elow = 0
+low = 1
 
 name = inputimeout(prompt=("what is your name (This will record if you are the highest marks)"), timeout= 30)
 if not name:
@@ -25,11 +28,47 @@ print("hi ",name," welcome to ? game you can only have ", wrong," wrong ans and 
 while not wrong <= 0:
   things = random.randint(1, 6)  # random get +-x/
   txt = random.randint(1, 5) #random output text
-  a = random.randint(0, 100)  # first number
-  b = random.randint(0, 100)  # secound number
+  a = random.randint(low, high)  # first number
+  b = random.randint(low, high)  # secound number
   # a + b
   aa = str(a)
   bb = str(b)
+  #setting again
+  if point <= 5:
+    times = 30
+    high = 10
+    elow = 0
+    ehigh = 2
+    low = 1
+  elif point <= 15:
+    times = 25
+    high = 50
+    elow = 0
+    ehigh = 10
+    low = 0
+    print("you only have ", times, "secound in 1 qustion now")
+  elif point <= 30:
+    times  = 20
+    high = 100
+    elow = 0
+    ehigh = 15
+    low = 0
+    print("you only have ", times, "secound in 1 qustion now")
+  elif point < 50:
+    times  = 15
+    high = 100
+    elow = -15
+    ehigh = 15
+    low = -100
+    print("you only have ", times, "secound in 1 qustion now")
+  elif point >= 100:
+    times = 10
+    high = 1000
+    elow = -20
+    ehigh = 20
+    low = -1000
+    print("you only have ", times, "secound in 1 qustion now")
+    
 
   if things == 1:
 
@@ -64,10 +103,10 @@ while not wrong <= 0:
   elif things == 4:
 
     if b > a:
-      b = random.randint(1, a)
+      b = random.randint(low, a)
       bb = str(b)
     if b == 0 :
-      b = random.randint(1, 100)
+      b = random.randint(low, high)
       bb = str(b)
 
     ans = round(a / b)
@@ -81,10 +120,10 @@ while not wrong <= 0:
   elif things == 5:
 
     if b > 10:
-      b = random.randint(1, 10)
+      b = random.randint(elow, ehigh)
       bb = str(b)
     if a > 10:
-      a = random.randint(1, 10)
+      a = random.randint(low, high)
       aa = str(a)
 
     ans = a**b
@@ -96,6 +135,9 @@ while not wrong <= 0:
       print(random.choice(jdata['timeout']))
 
   elif things == 6:
+    if b < 0:
+      b = random.randint(0, high)
+      bb = str(b)
     ans = round(b**0.5)
     try:
       inputans = inputimeout(prompt=(" √￣(" + bb + ") = ? (rounding)\n"),timeout= times)
@@ -113,7 +155,10 @@ while not wrong <= 0:
     print(random.choice(jdata['noinput']))
 
     print("The correct ans is ", ans)
-    print(random.choice(jdata['wrong']))
+    if point >= 50:
+      print(random.choice(jdata['highwrong']))
+    else:
+      print(random.choice(jdata['wrong']))
 
     wrong = wrong - 1
     bounes = 0

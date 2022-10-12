@@ -1,6 +1,8 @@
 {
-    "marks": 121,
-    "name": "po",
+    "marks": 0,
+    "passmarks": 121,
+    "name": "no one",
+    "passname": "po",
     "wrong": [
         "\n         \u274cTrash!! you are the trashest human in the world\n",
         "\n         \u274cIQ - 100\n",
@@ -12,7 +14,7 @@
         "you should write something",
         "Don't spam enter ok?",
         "??",
-        "Enter virus detected",
+        "Do you know in Hong Kong 1 min = India 60 secound",
         "you won't feel tired?"
     ],
     "timeout": [
@@ -28,5 +30,12 @@
         "\n\u2705you lucky\n",
         "\n\u2705IQ 180\n",
         "\n\u2705Good job \n"
+    ],
+    "highwrong": [
+        "\n         \u274cOh no you just wrong\n",
+        "\n         \u274coof\n",
+        "\n         \u274cAdd Oil!!!",
+        "\n         \u274cNooooo!!!\n",
+        "\n         \u274ci think i won't disappointed to you \n"
     ]
 }

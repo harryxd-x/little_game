@@ -1,0 +1,15 @@
+[[package]]
+name = "inputimeout"
+version = "1.0.4"
+description = "Multi platform standard input with timeout"
+category = "main"
+optional = false
+python-versions = ">=3.4"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "37e8f6d30cbce02b102679d4e956fb7e8a4f82fa5d0757fa28386a8cd42578f8"
+
+[metadata.files]
+inputimeout = []
