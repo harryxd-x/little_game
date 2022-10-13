@@ -1,4 +1,3 @@
-# import
 import os
 import random
 import json
