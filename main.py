@@ -2,6 +2,8 @@
 import os
 import random
 import json
+from timeit import default_timer as timer
+from datetime import timedelta
 with open('setting.json','r',encoding='utf8') as jfile:
   jdata = json.load(jfile)
 try:
@@ -19,14 +21,16 @@ high = 10
 ehigh = 5
 elow = 0
 low = 1
+thinghigh = 2
 
 name = inputimeout(prompt=("what is your name (This will record if you are the highest marks)"), timeout= 30)
 if not name:
   name = "guest"
 print("hi ",name," welcome to ? game you can only have ", wrong," wrong ans and you only have ", times, "secound in 1 qustion pls do you best in every qustion\n")
+start = timer()
 
 while not wrong <= 0:
-  things = random.randint(1, 6)  # random get +-x/
+  things = random.randint(1, thinghigh)  # random get +-x/
   txt = random.randint(1, 5) #random output text
   a = random.randint(low, high)  # first number
   b = random.randint(low, high)  # secound number
@@ -40,34 +44,52 @@ while not wrong <= 0:
     elow = 0
     ehigh = 2
     low = 1
+    thinghigh = 2
   elif point <= 15:
     times = 25
     high = 50
     elow = 0
     ehigh = 10
     low = 0
-    print("you only have ", times, "secound in 1 qustion now")
+    thinghigh = 3
+    if point == 6:
+      print("you only have ", times, "secound in 1 qustion now")
   elif point <= 30:
     times  = 20
     high = 100
     elow = 0
     ehigh = 15
     low = 0
-    print("you only have ", times, "secound in 1 qustion now")
-  elif point < 50:
+    thinghigh = 4
+    if point == 16:
+      print("you only have ", times, "secound in 1 qustion now")
+  elif point <= 50:
     times  = 15
-    high = 100
-    elow = -15
+    high = 200
+    elow = 0
     ehigh = 15
-    low = -100
-    print("you only have ", times, "secound in 1 qustion now")
+    low = 0
+    thinghigh = 5
+    if point == 31:
+      print("you only have ", times, "secound in 1 qustion now")
+  elif point < 100:
+    times  = 15
+    high = 200
+    elow = -20
+    ehigh = 20
+    low = -200
+    thinghigh = 6
+    if point == 51:
+      print("you only have ", times, "secound in 1 qustion now")
   elif point >= 100:
     times = 10
     high = 1000
-    elow = -20
-    ehigh = 20
+    elow = -25
+    ehigh = 25
     low = -1000
-    print("you only have ", times, "secound in 1 qustion now")
+    thinghigh = 7
+    if point == 100:
+      print("you only have ", times, "secound in 1 qustion now")
     
 
   if things == 1:
@@ -119,7 +141,7 @@ while not wrong <= 0:
 
   elif things == 5:
 
-    if b > 10:
+    if b > ehigh:
       b = random.randint(elow, ehigh)
       bb = str(b)
     if a > 10:
@@ -134,7 +156,21 @@ while not wrong <= 0:
       inputans = 0.9487
       print(random.choice(jdata['timeout']))
 
+
   elif things == 6:
+    if b < 0:
+      b = random.randint(0, high)
+      bb = str(b)
+    ans = round(a*10**b)
+    try:
+      inputans = inputimeout(prompt=(aa + " × 10 ^ " + bb + " = ?\n"),timeout= times)
+
+    except TimeoutOccurred:
+      inputans = 0.9487
+      print(random.choice(jdata['timeout']))
+      
+
+  elif things == 7:
     if b < 0:
       b = random.randint(0, high)
       bb = str(b)
@@ -145,6 +181,7 @@ while not wrong <= 0:
     except TimeoutOccurred:
       inputans = 0.9487
       print(random.choice(jdata['timeout']))
+      
 
 
 
@@ -212,6 +249,9 @@ while not wrong <= 0:
       print("you get a new record in this game")
     txt = random.randint(1, 5)
     print("         --Game Over--\nYou got ", point, "point!\nThe higher score record is ",jdata['marks'],"and He/She is ",jdata['name'])
+    end = timer()
+    timer =timedelta(seconds=end-start)
+    print("you spend",timer," to play this game lol")
     with open('setting.json','w',encoding='utf8') as jfile:
       json.dump(jdata,jfile,indent = 4)
   
