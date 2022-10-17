@@ -179,7 +179,7 @@ while not wrong <= 0:
     if b > 10 or b < -10:
       b = random.randint(-10, 10)
       bb = str(b)
-    ans = round(a*10**b)
+    ans = a*10**b
     try:
       inputans = inputimeout(prompt=(aa + " × 10 ^ " + bb + " = ?\n"),timeout= times)
 
