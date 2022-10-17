@@ -6,10 +6,22 @@ category = "main"
 optional = false
 python-versions = ">=3.4"
 
+[[package]]
+name = "termcolor"
+version = "2.0.1"
+description = "ANSI color formatting for output in terminal"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+tests = ["pytest-cov", "pytest"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "37e8f6d30cbce02b102679d4e956fb7e8a4f82fa5d0757fa28386a8cd42578f8"
+content-hash = "0feb14419ae1f0cd18c93a96d0b81b2b35027dec004b2bc0103fc28694290bc0"
 
 [metadata.files]
 inputimeout = []
+termcolor = []

@@ -3,13 +3,22 @@ import random
 import json
 from timeit import default_timer as timer
 from datetime import timedelta
-with open('setting.json','r',encoding='utf8') as jfile:
-  jdata = json.load(jfile)
+
+try:
+  from termcolor import colored
+except:
+  os.system('pip install termcolor')
+  from termcolor import colored
 try:
   from inputimeout import inputimeout, TimeoutOccurred
 except:
   os.system('pip install inputimeout')
   from inputimeout import inputimeout, TimeoutOccurred
+
+  
+with open('setting.json','r',encoding='utf8') as jfile:
+  jdata = json.load(jfile)
+
 
 # setting
 point = 0  # player point
@@ -22,10 +31,13 @@ elow = 0
 low = 1
 thinghigh = 2
 
-name = inputimeout(prompt=("what is your name (This will record if you are the highest marks)"), timeout= 30)
+try:
+  name = inputimeout(prompt=("what is your name (This will record if you are the highest marks)"), timeout= 30)
+except TimeoutOccurred:
+  name = "guest"
 if not name:
   name = "guest"
-print("hi ",name," welcome to ? game you can only have ", wrong," wrong ans and you only have ", times, "secound in 1 qustion pls do you best in every qustion\n")
+print(colored(f"hi {name} welcome to little game. you can only have {wrong} wrong ans and you only have {times} secound in 1 qustion . it will become harder when you have enough marks pls do you best in every qustion\n",'blue',attrs=['bold']))
 start = timer()
 
 while not wrong <= 0:
@@ -33,74 +45,86 @@ while not wrong <= 0:
   txt = random.randint(1, 5) #random output text
   a = random.randint(low, high)  # first number
   b = random.randint(low, high)  # secound number
-  # a + b
   aa = str(a)
   bb = str(b)
+  
   #setting again
+  # makme it harder while the game
   if point <= 5:
     times = 30
     high = 10
     elow = 0
-    ehigh = 2
+    ehigh = 0
     low = 1
-    thinghigh = 2
+    thinghigh = 3
+    
   elif point <= 15:
     times = 25
     high = 50
     elow = 0
-    ehigh = 10
+    ehigh = 0
     low = 0
-    thinghigh = 3
+    thinghigh = 4
     if point == 6:
-      print("you only have ", times, "secound in 1 qustion now")
+      print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
+      
   elif point <= 30:
     times  = 20
     high = 100
     elow = 0
-    ehigh = 15
+    ehigh = 5
     low = 0
-    thinghigh = 4
+    thinghigh = 5
     if point == 16:
-      print("you only have ", times, "secound in 1 qustion now")
-  elif point <= 50:
+      print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
+      
+  elif point <= 49:
     times  = 15
     high = 200
     elow = 0
-    ehigh = 15
+    ehigh = 10
     low = 0
-    thinghigh = 5
+    thinghigh = 6
     if point == 31:
-      print("you only have ", times, "secound in 1 qustion now")
+      print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
+      
   elif point < 100:
     times  = 15
     high = 200
-    elow = -20
-    ehigh = 20
+    elow = -10
+    ehigh = 10
     low = -200
-    thinghigh = 6
-    if point == 51:
-      print("you only have ", times, "secound in 1 qustion now")
+    thinghigh = 7
+    if point == 50:
+      print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
+      
   elif point >= 100:
     times = 10
     high = 1000
-    elow = -25
-    ehigh = 25
+    elow = -15
+    ehigh = 15
     low = -1000
-    thinghigh = 7
+    thinghigh = 8
     if point == 100:
-      print("you only have ", times, "secound in 1 qustion now")
+      print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
     
 
+
+
+
+
+      
+
+  # start giving qustion
   if things == 1:
 
     ans = a + b
     try:
       inputans = inputimeout(prompt=(aa + " + " + bb + " = ?\n"), timeout= times)
       
-
     except TimeoutOccurred:
       inputans = 0.9487
-      print(random.choice(jdata['timeout']))
+      print(colored(random.choice(jdata['timeout']),'red'))
 
   elif things == 2:
 
@@ -110,7 +134,7 @@ while not wrong <= 0:
 
     except TimeoutOccurred:
       inputans = 0.9487
-      print(random.choice(jdata['timeout']))
+      print(colored(random.choice(jdata['timeout']),'red'))
 
   elif things == 3:
     ans = a * b
@@ -119,13 +143,14 @@ while not wrong <= 0:
 
     except TimeoutOccurred:
       inputans = 0.9487
-      print(random.choice(jdata['timeout']))
+      print(colored(random.choice(jdata['timeout']),'red'))
 
   elif things == 4:
 
     if b > a:
       b = random.randint(low, a)
       bb = str(b)
+      
     if b == 0 :
       b = random.randint(low, high)
       bb = str(b)
@@ -136,29 +161,23 @@ while not wrong <= 0:
 
     except TimeoutOccurred:
       inputans = 0.9487
-      print(random.choice(jdata['timeout']))
+      print(colored(random.choice(jdata['timeout']),'red'))
 
+      
   elif things == 5:
 
-    if b > ehigh:
-      b = random.randint(elow, ehigh)
-      bb = str(b)
-    if a > 10:
-      a = random.randint(low, high)
-      aa = str(a)
-
-    ans = a**b
+    ans = round(a*(b/100))
     try:
-      inputans = inputimeout(prompt=(aa + " ^ " + bb + " = ?\n"), timeout= times)
+      inputans = inputimeout(prompt=(aa + " × " + bb + "% = ?\n"), timeout= times)
 
     except TimeoutOccurred:
       inputans = 0.9487
-      print(random.choice(jdata['timeout']))
+      print(colored(random.choice(jdata['timeout']),'red'))
 
 
   elif things == 6:
-    if b < 0:
-      b = random.randint(0, high)
+    if b > 10 or b < -10:
+      b = random.randint(-10, 10)
       bb = str(b)
     ans = round(a*10**b)
     try:
@@ -166,10 +185,37 @@ while not wrong <= 0:
 
     except TimeoutOccurred:
       inputans = 0.9487
-      print(random.choice(jdata['timeout']))
+      print(colored(random.choice(jdata['timeout']),'red'))
+
       
 
   elif things == 7:
+
+    if b > ehigh or b < elow:
+      b = random.randint(elow, ehigh)
+      bb = str(b)
+    if a > 10 or a < -10:
+      a = random.randint(-10, 10)
+      aa = str(a)
+    ans = a**b
+    if ans >= 100000:
+      a = random.randint(-10, 10)
+      b = random.randint(elow, ehigh)
+      bb = str(b)
+      aa = str(a)
+      ans = a**b
+    
+    try:
+      inputans = inputimeout(prompt=(aa + " ^ " + bb + " = ?\n"), timeout= times)
+
+    except TimeoutOccurred:
+      inputans = 0.9487
+      print(colored(random.choice(jdata['timeout']),'red'))
+
+
+      
+
+  elif things == 8:
     if b < 0:
       b = random.randint(0, high)
       bb = str(b)
@@ -179,32 +225,29 @@ while not wrong <= 0:
 
     except TimeoutOccurred:
       inputans = 0.9487
-      print(random.choice(jdata['timeout']))
-      
+      print(colored(random.choice(jdata['timeout']),'red'))
 
 
-
-  else:
-    print("⛔️error") 
+    
 
   if not inputans:
-    print(random.choice(jdata['noinput']))
+    print(colored(random.choice(jdata['noinput']),'red'))
 
-    print("The correct ans is ", ans)
+    print(colored(f"The correct ans is {ans}" ,'blue',attrs=['bold']))
     if point >= 50:
-      print(random.choice(jdata['highwrong']))
+      print(colored(random.choice(jdata['highwrong']),'red',attrs=['bold']))
     else:
-      print(random.choice(jdata['wrong']))
+      print(colored(random.choice(jdata['wrong']), 'red',attrs=['bold']))
 
     wrong = wrong - 1
     bounes = 0
-    print("         ", wrong, " times left \n")
+    print(colored(f"         {wrong}  times left \n", 'magenta',attrs=['bold']))
 
   else:
     try:
       if float(inputans) == float(ans):  #Player correct
         point = point + 1
-        print(random.choice(jdata['nice']))
+        print(colored(random.choice(jdata['nice']), 'green',attrs=['bold']))
         
 
         if bounes == 0:  # if this time
@@ -212,106 +255,105 @@ while not wrong <= 0:
 
         elif bounes == 1:
           wrong = wrong + 1
-          print("         you get 1 more time ", wrong, " times left \n")
+          print(colored(f"         you get 1 more time {wrong} times left \n", 'green'))
 
       else:  #Player wrong
-        print("The correct ans is ", ans)
-        print(random.choice(jdata['wrong']))
+        print(colored(f"The correct ans is {ans}" ,'blue',attrs=['bold']))
+        print(colored(random.choice(jdata['wrong']), 'red',attrs=['bold']))
 
         wrong = wrong - 1
         bounes = 0
 
-        print("         ", wrong, " times left \n")
+        print(colored(f"         {wrong}  times left \n", 'magenta',attrs=['bold']))
     except:
       txt = random.randint(1, 5)
       if txt == 1:
-          print(inputans," is not a number!")
+          print(colored(f"{inputans} is not a number!", 'red'))
       elif txt == 2:
-          print("you think ",inputans,"is a number?")
+          print(colored(f"you think {inputans} is a number?", 'red'))
       elif txt == 3:
-          print("Don't spam ok this is a math you write ",inputans," ?")
+          print(colored(f"Don't spam ok this is a math you write {inputans} ?", 'red'))
       elif txt == 4:
-          print("you spend 10 secound to spam",inputans," = you waste everyone 10 secound = you waste 300 secound = you waste everyone 5 min")
+          print(colored(f"you spend 10 secound to spam {inputans} = you waste everyone 10 secound = you waste 300 secound = you waste everyone 5 min", 'red'))
       elif txt == 5:
-          print("Nice IQ ",inputans,"is a number \n you should go to see doctor")
-      print("The correct ans is ", ans)
-      print(random.choice(jdata['wrong']))
+          print(colored(f"Nice IQ {inputans}is a number \n you should go to see doctor", 'red'))
+      print(colored(f"The correct ans is {ans}" ,'blue',attrs=['bold']))
+      print(colored(random.choice(jdata['wrong']), 'red',attrs=['bold']))
 
       wrong = wrong - 1
       bounes = 0
-      print("         ", wrong, " times left \n")
+      print(colored(f"         {wrong}  times left \n", 'magenta',attrs=['bold']))
 
   if wrong == 0:
     if int(point) > int(jdata['marks']):
       jdata['marks'] = point
       jdata['name'] = name
-      print("you get a new record in this game")
+      print(colored(f"{name} you get a new record in this game",'green'))
     txt = random.randint(1, 5)
-    print("         --Game Over--\nYou got ", point, "point!\nThe higher score record is ",jdata['marks'],"and He/She is ",jdata['name'])
+    print(colored(f"         --Game Over--\nYou got {point} point!\nThe higher score record is {jdata['marks']} and He/She is {jdata['name']}",'blue',attrs=['bold']))
     end = timer()
     timer =timedelta(seconds=end-start)
-    print("you spend",timer," to play this game lol")
+    print(colored(f"you spend {timer} to play this game lol",'green'))
     with open('setting.json','w',encoding='utf8') as jfile:
       json.dump(jdata,jfile,indent = 4)
   
-    if point == 0:
+    if point <= 25:
         if txt == 1:
-          print("Pls go back to your primary school")
+          print(colored("Pls go back to your primary school",'red'))
         elif txt == 2:
-          print("Oh You are so unluckly")
+          print(colored("Oh You are so unluckly",'red'))
         elif txt == 3:
-          print(
-            "Like and subscribe in the next 3.2 seconds or your math exam mark will become 0")
+          print(colored("Like and subscribe in the next 3.2 seconds or your math exam mark will become 0",'red'))
         elif txt == 4:
-          print("PlayerSoTrash = true")
+          print(colored("PlayerSoTrash = true",'red'))
         elif txt == 5:
-          print("Do you want to play our baby mode?")
-          print("Oh sorry we haven't baby mode")
+          print(colored("Do you want to play our baby mode?",'red'))
+          print(colored("Oh sorry we haven't baby mode",'red'))
 
-    elif point <= 5:
+    elif point <= 49:
         if txt == 1:
-          print("Can you do it better?")
+          print(colored("Can you do it better?",'red'))
         elif txt == 2:
-          print('"1"+"1"= 11')
+          print(colored('you should change your CPU','red'))
         elif txt == 3:
-          print("you should find your math teacher")
+          print(colored("you should find your math teacher",'red'))
         elif txt == 4:
-          print("Never gonna give you up Never gonna let you down")
+          print(colored("Never gonna give you up Never gonna let you down",'red'))
         elif txt == 5:
-          print("https://youtu.be/dQw4w9WgXcQ\n click this ☝")
+          print(colored("https://youtu.be/dQw4w9WgXcQ\n click this ☝",'red'))
 
-    elif point <= 10:
+    elif point <= 100:
         if txt == 1:
-          print("You just pass?Nice")
+          print(colored("You just pass?Nice",'red'))
         elif txt == 2:
-          print(":)")
+          print(colored(":)",'red'))
         elif txt == 3:
-          print("Good")
+          print(colored("Good",'red'))
         elif txt == 4:
-          print(".w.")
+          print(colored(".w.",'red'))
         elif txt == 5:
-          print("Add oil")
+          print(colored("Add oil",'red'))
 
-    elif point < 20:
+    elif point < 200:
         if txt == 1:
-          print("OMG WOW!")
+          print(colored("Nice try",'red'))
         elif txt == 2:
-          print("403 error")
+          print(colored("403 error",'red'))
         elif txt == 3:
-          print("Sorry this game haven't full mark:)")
+          print(colored("Do you know this game is so hard when you get this marks",'red'))
         elif txt == 4:
-          print(".W.")
+          print(colored(".W.",'red'))
         elif txt == 5:
-          print("404 Not Find")
+          print(colored("404 Not Find",'red'))
 
-    elif point >= 20:
+    elif point >= 200:
         if txt == 1:
-          print("ඞSUSඞ")
+          print(colored("ඞSUSඞ",'red'))
         elif txt == 2:
-          print("Do you know only 0.001% of people can see this message")
+          print(colored("Do you know only 0.001% of people can see this message",'red'))
         elif txt == 3:
-          print("Sorry this is not full mark:)")
+          print(colored("When you hear this , you spent so many times",'red'))
         elif txt == 4:
-          print(".O.")
+          print(colored(".O.",'red'))
         elif txt == 5:
-          print("GG EZ")
+          print(colored("GG EZ",'red'))
