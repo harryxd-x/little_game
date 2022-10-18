@@ -37,7 +37,7 @@ except TimeoutOccurred:
   name = "guest"
 if not name:
   name = "guest"
-print(colored(f"hi {name} welcome to little game. you can only have {wrong} wrong ans and you only have {times} secound in 1 qustion . it will become harder when you have enough marks pls do you best in every qustion\n",'blue',attrs=['bold']))
+print(colored(f"hi {name} welcome to little game (version {jdata['version']}). you can only have {wrong} wrong ans and you only have {times} secound in 1 qustion . it will become harder when you have enough marks pls do you best in every qustion\n",'blue',attrs=['bold']))
 start = timer()
 
 while not wrong <= 0:
