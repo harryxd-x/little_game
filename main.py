@@ -298,62 +298,17 @@ while not wrong <= 0:
       json.dump(jdata,jfile,indent = 4)
   
     if point <= 25:
-        if txt == 1:
-          print(colored("Pls go back to your primary school",'red'))
-        elif txt == 2:
-          print(colored("Oh You are so unluckly",'red'))
-        elif txt == 3:
-          print(colored("Like and subscribe in the next 3.2 seconds or your math exam mark will become 0",'red'))
-        elif txt == 4:
-          print(colored("PlayerSoTrash = true",'red'))
-        elif txt == 5:
-          print(colored("Do you want to play our baby mode?",'red'))
-          print(colored("Oh sorry we haven't baby mode",'red'))
+      print(colored(random.choice(jdata['trashpoint']),'red'))
 
     elif point <= 49:
-        if txt == 1:
-          print(colored("Can you do it better?",'red'))
-        elif txt == 2:
-          print(colored('you should change your CPU','red'))
-        elif txt == 3:
-          print(colored("you should find your math teacher",'red'))
-        elif txt == 4:
-          print(colored("Never gonna give you up Never gonna let you down",'red'))
-        elif txt == 5:
-          print(colored("https://youtu.be/dQw4w9WgXcQ\n click this ☝",'red'))
+      print(colored(random.choice(jdata['notpasspoint']),'red'))
+
 
     elif point <= 100:
-        if txt == 1:
-          print(colored("You just pass?Nice",'red'))
-        elif txt == 2:
-          print(colored(":)",'red'))
-        elif txt == 3:
-          print(colored("Good",'red'))
-        elif txt == 4:
-          print(colored(".w.",'red'))
-        elif txt == 5:
-          print(colored("Add oil",'red'))
+      print(colored(random.choice(jdata['passpoint']),'red'))
 
     elif point < 200:
-        if txt == 1:
-          print(colored("Nice try",'red'))
-        elif txt == 2:
-          print(colored("403 error",'red'))
-        elif txt == 3:
-          print(colored("Do you know this game is so hard when you get this marks",'red'))
-        elif txt == 4:
-          print(colored(".W.",'red'))
-        elif txt == 5:
-          print(colored("404 Not Find",'red'))
+      print(colored(random.choice(jdata['highpoint']),'red'))
 
     elif point >= 200:
-        if txt == 1:
-          print(colored("ඞSUSඞ",'red'))
-        elif txt == 2:
-          print(colored("Do you know only 0.00001% of people can see this message",'red'))
-        elif txt == 3:
-          print(colored("When you hear this , you spent so many times",'red'))
-        elif txt == 4:
-          print(colored(".O.",'red'))
-        elif txt == 5:
-          print(colored("GG EZ",'red'))
+      print(colored(random.choice(jdata['veryhighpoint']),'red'))
