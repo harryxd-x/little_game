@@ -20,7 +20,7 @@ with open('setting.json','r',encoding='utf8') as jfile:
   jdata = json.load(jfile)
 
 
-# setting
+# setting，
 point = 0  # player point
 times = 30  # countdown time
 wrong = 10
@@ -350,7 +350,7 @@ while not wrong <= 0:
         if txt == 1:
           print(colored("ඞSUSඞ",'red'))
         elif txt == 2:
-          print(colored("Do you know only 0.001% of people can see this message",'red'))
+          print(colored("Do you know only 0.00001% of people can see this message",'red'))
         elif txt == 3:
           print(colored("When you hear this , you spent so many times",'red'))
         elif txt == 4:
