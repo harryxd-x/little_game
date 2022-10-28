@@ -293,16 +293,7 @@ while not wrong <= 0:
           print(colored(f"         {wrong}  times left \n", 'magenta',attrs=['bold']))
       else:
         txt = random.randint(1, 5)
-        if txt == 1:
-            print(colored(f"{inputans} is not a number!", 'red'))
-        elif txt == 2:
-            print(colored(f"you think {inputans} is a number?", 'red'))
-        elif txt == 3:
-            print(colored(f"Don't spam ok this is a math you write {inputans} ?", 'red'))
-        elif txt == 4:
-            print(colored(f"you spend 10 secound to spam {inputans} = you waste everyone 10 secound = you waste 300 secound = you waste everyone 5 min", 'red'))
-        elif txt == 5:
-            print(colored(f"Nice IQ {inputans}is a number \n you should go to see doctor", 'red'))
+        print(colored(random.choice(jdata['notnum']), 'red'))
         print(colored(f"The correct ans is {ans}" ,'blue',attrs=['bold']))
         print(colored(random.choice(jdata['wrong']), 'red',attrs=['bold']))
 
