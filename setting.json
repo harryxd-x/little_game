@@ -1,79 +1,78 @@
 {
-  "version": "0.9.4",
-  "marks": 35,
-  "passmarks": 121,
-  "name": "human name",
-  "passname": "po",
-  "wrong": [
-    "\n         \u274cTrash!! you are the trashest human in the world\n",
-    "\n         \u274cIQ - 100\n",
-    "\n         \u274ci think you are smart \n         \u274cbut not now\n",
-    "\n         \u274cyou spend 1 secound to do it wrong = you waste everyone 1 secound = you waste 30 secound\n",
-    "\n         \u274ci so disappointed to you \n",
-    "\n         \u274c\n"
-  ],
-  "noinput": [
-    "you should write something",
-    "Don't spam enter ok?",
-    "??",
-    "Do you know in Hong Kong 1 min = India 60 secound",
-    "you won't feel tired?"
-  ],
-  "timeout": [
-    "timeup put down your pen!",
-    "Don't afk ok?",
-    ":/",
-    "player.exe has stopped working",
-    "2000 years later"
-  ],
-  "nice": [
-    "\n\u2705oh my god you Correct!\n",
-    "\n\u2705oh you so smart!\n",
-    "\n\u2705you lucky\n",
-    "\n\u2705IQ 180\n",
-    "\n\u2705Good job \n"
-  ],
-  "highwrong": [
-    "\n         \u274cOh no you just wrong\n",
-    "\n         \u274coof\n",
-    "\n         \u274cAdd Oil!!!",
-    "\n         \u274cNooooo!!!\n",
-    "\n         \u274ci think i won't disappointed to you \n"
-  ],
-  "veryhighpoint": [
-    "GG EZ",
-    ".O.",
-    "When you hear this , you spent so many times",
-    "Do you know only 0.00001% of people can see this message",
-    "ඞSUSඞ"
-  ],
-  "highpoint": [
-    "404 Not Find",
-    ".W.",
-    "Do you know this game is so hard when you get this marks",
-    "403 error",
-    "Nice try"
-  ],
-  "passpoint": [
-    "Add oil",
-    ".w.",
-    "Good",
-    "You just pass?Nice",
-    ":)"
-  ],
-  "notpasspoint": [
-    "Can you do it better?",
-    "you should change your CPU",
-    "you should find your math teacher",
-    "Never gonna give you up Never gonna let you down",
-    "https://youtu.be/dQw4w9WgXcQ\n click this ☝"
-  ],
-  "trashpoint": [
-    "Pls go back to your primary school",
-    "Oh You are so unluckly",
-    "Like and subscribe in the next 3.2 seconds or your math exam mark will become 0",
-    "PlayerSoTrash = true",
-    "Do you want to play our baby mode?\nOh sorry we haven't baby mode"
-  ]
-    
+    "version": "0.9.4",
+    "marks": 35,
+    "passmarks": 121,
+    "name": "human name",
+    "passname": "po",
+    "wrong": [
+        "\n         \u274cTrash!! you are the trashest human in the world\n",
+        "\n         \u274cIQ - 100\n",
+        "\n         \u274ci think you are smart \n         \u274cbut not now\n",
+        "\n         \u274cyou spend 1 secound to do it wrong = you waste everyone 1 secound = you waste 30 secound\n",
+        "\n         \u274ci so disappointed to you \n",
+        "\n         \u274c\n"
+    ],
+    "noinput": [
+        "you should write something",
+        "Don't spam enter ok?",
+        "??",
+        "Do you know in Hong Kong 1 min = India 60 secound",
+        "you won't feel tired?"
+    ],
+    "timeout": [
+        "timeup put down your pen!",
+        "Don't afk ok?",
+        ":/",
+        "player.exe has stopped working",
+        "2000 years later"
+    ],
+    "nice": [
+        "\n\u2705oh my god you Correct!\n",
+        "\n\u2705oh you so smart!\n",
+        "\n\u2705you lucky\n",
+        "\n\u2705IQ 180\n",
+        "\n\u2705Good job \n"
+    ],
+    "highwrong": [
+        "\n         \u274cOh no you just wrong\n",
+        "\n         \u274coof\n",
+        "\n         \u274cAdd Oil!!!",
+        "\n         \u274cNooooo!!!\n",
+        "\n         \u274ci think i won't disappointed to you \n"
+    ],
+    "veryhighpoint": [
+        "GG EZ",
+        ".O.",
+        "When you hear this , you spent so many times",
+        "Do you know only 0.00001% of people can see this message",
+        "\u0d9eSUS\u0d9e"
+    ],
+    "highpoint": [
+        "404 Not Find",
+        ".W.",
+        "Do you know this game is so hard when you get this marks",
+        "403 error",
+        "Nice try"
+    ],
+    "passpoint": [
+        "Add oil",
+        ".w.",
+        "Good",
+        "You just pass?Nice",
+        ":)"
+    ],
+    "notpasspoint": [
+        "Can you do it better?",
+        "you should change your CPU",
+        "you should find your math teacher",
+        "Never gonna give you up Never gonna let you down",
+        "https://youtu.be/dQw4w9WgXcQ\n click this \u261d"
+    ],
+    "trashpoint": [
+        "Pls go back to your primary school",
+        "Oh You are so unluckly",
+        "Like and subscribe in the next 3.2 seconds or your math exam mark will become 0",
+        "PlayerSoTrash = true",
+        "Do you want to play our baby mode?\nOh sorry we haven't baby mode"
+    ]
 }
