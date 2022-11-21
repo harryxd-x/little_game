@@ -267,7 +267,7 @@ while not wrong <= 0:
         print(colored(f"         {wrong}  times left \n", 'magenta',attrs=['bold']))
     except:
       if inputans == "help":
-          print(colored("just count the math you don't know?",'yellow',attrs=['bold']))
+          print(colored("count it and type it",'yellow',attrs=['bold']))
           print(colored(f"The correct ans is {ans}" ,'blue',attrs=['bold']))
           print(colored(random.choice(jdata['wrong']), 'red',attrs=['bold']))
 
@@ -282,7 +282,7 @@ while not wrong <= 0:
 
           wrong = 0
           bounes = 0
-      elif inputans == "pass" or inputans == "skip":
+      elif inputans == "pass" or inputans == "skip"or inputans == "idk":
           print(colored("ok you so trash",'yellow',attrs=['bold']))
           print(colored(f"The correct ans is {ans}" ,'blue',attrs=['bold']))
           print(colored(random.choice(jdata['wrong']), 'red',attrs=['bold']))
