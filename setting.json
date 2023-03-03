@@ -1,5 +1,5 @@
 {
-    "version": "0.9.4",
+    "version": "1.0.1",
     "marks": 35,
     "passmarks": 121,
     "name": "human name",
@@ -10,7 +10,7 @@
         "\n         \u274cbruh\n",
         "\n         \u274cSo Sad\n",
         "\n         \u274cAdd oil\n",
-        "\n         \u274c\n"
+        "\n         \u274clol you wrong nice\n"
     ],
     "noinput": [
         "you should write something",
@@ -20,7 +20,7 @@
         "write someting"
     ],
     "timeout": [
-        "timeup put down your pen!",
+        "don't afk!:/",
         ":(",
         ":/",
         "player.exe has stopped working",
@@ -50,7 +50,7 @@
     "highpoint": [
         "404 Not Find",
         ".W.",
-        "Do you know this game is so hard when you get this marks",
+        ":>",
         "403 error",
         "Nice try"
     ],
@@ -75,10 +75,10 @@
         ":C",
         ":<<<"
     ],
-    "notnum":[
+    "notnum": [
         "This is not a number!",
-        "This is not number.",
-        "pls write some text this is not a text",
+        "Number i need number!!!!!",
+        "pls write some text this is not a number",
         "This a text",
         "This is a not a number"
     ]

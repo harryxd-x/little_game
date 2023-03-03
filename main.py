@@ -23,7 +23,7 @@ with open('setting.json','r',encoding='utf8') as jfile:
 # setting，
 point = 0  # player point
 times = 30  # countdown time
-wrong = 10
+wrong = 5
 bounes = 0  # 0 = false 1 = true
 high = 10
 ehigh = 5
@@ -37,7 +37,7 @@ except TimeoutOccurred:
   name = "guest"
 if not name:
   name = "guest"
-print(colored(f"hi {name} welcome to little game (version {jdata['version']}). you can only have {wrong} wrong ans and you only have {times} secound in 1 qustion . it will become harder when you have enough marks pls do you best in every qustion\n",'blue',attrs=['bold']))
+print(colored(f"hi {name} welcome to little game (version {jdata['version']}). you can only have {wrong} wrong ans and you only have {times} secound in 1 qustion . it will become harder when you have enough marks, do you best in every qustion\n",'blue',attrs=['bold']))
 start = timer()
 
 while not wrong <= 0:
@@ -58,7 +58,7 @@ while not wrong <= 0:
     low = 1
     thinghigh = 3
     
-  elif point <= 15:
+  elif point <= 10:
     times = 25
     high = 50
     elow = 0
@@ -68,7 +68,7 @@ while not wrong <= 0:
     if point == 6:
       print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
       
-  elif point <= 30:
+  elif point <= 15:
     times  = 20
     high = 100
     elow = 0
@@ -78,7 +78,7 @@ while not wrong <= 0:
     if point == 16:
       print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
       
-  elif point <= 49:
+  elif point <= 30:
     times  = 15
     high = 200
     elow = 0
@@ -88,7 +88,7 @@ while not wrong <= 0:
     if point == 31:
       print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
       
-  elif point < 100:
+  elif point < 50:
     times  = 15
     high = 200
     elow = -10
@@ -98,7 +98,7 @@ while not wrong <= 0:
     if point == 50:
       print(colored(f"you only have {times} secound in 1 qustion now", 'yellow',attrs=['bold']))
       
-  elif point >= 100:
+  elif point >= 50:
     times = 10
     high = 1000
     elow = -15
