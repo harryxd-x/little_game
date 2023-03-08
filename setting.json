@@ -1,21 +1,21 @@
 {
-    "version": "1.0.1",
-    "marks": 35,
+    "version": "2.0.1",
+    "marks": 16,
     "passmarks": 121,
-    "name": "human name",
+    "name": "H",
     "passname": "po",
     "wrong": [
         "\n         \u274cOh no you wrong:(\n",
         "\n         \u274c:(\n",
         "\n         \u274cbruh\n",
-        "\n         \u274cSo Sad\n",
+        "\n         \u274cmission failed sucessfully\n",
         "\n         \u274cAdd oil\n",
         "\n         \u274clol you wrong nice\n"
     ],
     "noinput": [
         "you should write something",
         "please write something",
-        "??",
+        "??????????????????????????",
         "...",
         "write someting"
     ],
@@ -24,14 +24,16 @@
         ":(",
         ":/",
         "player.exe has stopped working",
-        "2000 years later"
+        "2000 years later",
+        "did you went to eat?"
     ],
     "nice": [
         "\n\u2705oh my god you Correct!\n",
         "\n\u2705oh you so smart!\n",
         "\n\u2705:)\n",
         "\n\u2705IQ 180\n",
-        "\n\u2705Good job \n"
+        "\n\u2705Good job \n",
+        "\n\u2705Every minute in India is equivalent to 60 seconds in Hong Kong\n"
     ],
     "highwrong": [
         "\n         \u274cADD OIL!!!\n",
@@ -66,14 +68,16 @@
         "you haven't pass:(",
         ".A.",
         "Never gonna give you up Never gonna let you down",
-        ";-;"
+        ";-;",
+        "skill issue"
     ],
     "trashpoint": [
         "noooo you wrong",
         "Oh You are so unluckly",
         "no god pls no",
         ":C",
-        ":<<<"
+        ":<<<",
+        "LMFAO"
     ],
     "notnum": [
         "This is not a number!",
