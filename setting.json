@@ -1,44 +1,46 @@
 {
-    "version": "0.9.4",
-    "marks": 35,
+    "version": "2.0.1",
+    "marks": 0,
     "passmarks": 121,
-    "name": "human name",
+    "name": "null",
     "passname": "po",
     "wrong": [
-        "\n         \u274cTrash!! you are the trashest human in the world\n",
-        "\n         \u274cIQ - 100\n",
-        "\n         \u274ci think you are smart \n         \u274cbut not now\n",
-        "\n         \u274cyou spend 1 secound to do it wrong = you waste everyone 1 secound = you waste 30 secound\n",
-        "\n         \u274ci so disappointed to you \n",
-        "\n         \u274c\n"
+        "\n         \u274cOh no you wrong:(\n",
+        "\n         \u274c:(\n",
+        "\n         \u274cbruh\n",
+        "\n         \u274cmission failed sucessfully\n",
+        "\n         \u274cAdd oil\n",
+        "\n         \u274clol you wrong nice\n"
     ],
     "noinput": [
         "you should write something",
-        "Don't spam enter ok?",
-        "??",
-        "Do you know in Hong Kong 1 min = India 60 secound",
-        "you won't feel tired?"
+        "please write something",
+        "??????????????????????????",
+        "...",
+        "write someting"
     ],
     "timeout": [
-        "timeup put down your pen!",
-        "Don't afk ok?",
+        "don't afk!:/",
+        ":(",
         ":/",
         "player.exe has stopped working",
-        "2000 years later"
+        "2000 years later",
+        "did you went to eat?"
     ],
     "nice": [
         "\n\u2705oh my god you Correct!\n",
         "\n\u2705oh you so smart!\n",
-        "\n\u2705you lucky\n",
+        "\n\u2705:)\n",
         "\n\u2705IQ 180\n",
-        "\n\u2705Good job \n"
+        "\n\u2705Good job \n",
+        "\n\u2705Every minute in India is equivalent to 60 seconds in Hong Kong\n"
     ],
     "highwrong": [
-        "\n         \u274cOh no you just wrong\n",
-        "\n         \u274coof\n",
+        "\n         \u274cADD OIL!!!\n",
+        "\n         \u274cool\n",
         "\n         \u274cAdd Oil!!!",
         "\n         \u274cNooooo!!!\n",
-        "\n         \u274ci think i won't disappointed to you \n"
+        "\n         \u274csad\n"
     ],
     "veryhighpoint": [
         "GG EZ",
@@ -50,7 +52,7 @@
     "highpoint": [
         "404 Not Find",
         ".W.",
-        "Do you know this game is so hard when you get this marks",
+        ":>",
         "403 error",
         "Nice try"
     ],
@@ -62,17 +64,26 @@
         ":)"
     ],
     "notpasspoint": [
-        "Can you do it better?",
-        "you should change your CPU",
-        "you should find your math teacher",
+        "lets do it better",
+        "you haven't pass:(",
+        ".A.",
         "Never gonna give you up Never gonna let you down",
-        "https://youtu.be/dQw4w9WgXcQ\n click this \u261d"
+        ";-;",
+        "skill issue"
     ],
     "trashpoint": [
-        "Pls go back to your primary school",
+        "noooo you wrong",
         "Oh You are so unluckly",
-        "Like and subscribe in the next 3.2 seconds or your math exam mark will become 0",
-        "PlayerSoTrash = true",
-        "Do you want to play our baby mode?\nOh sorry we haven't baby mode"
+        "no god pls no",
+        ":C",
+        ":<<<",
+        "LMFAO"
+    ],
+    "notnum": [
+        "This is not a number!",
+        "Number i need number!!!!!",
+        "pls write some text this is not a number",
+        "This a text",
+        "This is a not a number"
     ]
 }
