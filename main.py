@@ -43,7 +43,7 @@ text = 0
 timeout = 0
 qustion = 0
 
-name = input("what is your name ")
+name = input("what is your name : ")
 # os.execv(sys.executable, ['python'] + sys.argv)
 if not name:
   name = "guest"
